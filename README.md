@@ -1,10 +1,10 @@
-# 📱 FunerariaApp — Aplicación Móvil Android
+#  FunerariaApp — Aplicación Móvil Android
 
 Aplicación móvil desarrollada en **Kotlin con Jetpack Compose** que consume el backend **FunerariaApi** (Django REST Framework + PostgreSQL). Implementa autenticación JWT, CRUD completo para 8 entidades, búsqueda, paginación y control de permisos por rol.
 
 ---
 
-## 🛠️ Requisitos de instalación
+##  Requisitos de instalación
 
 - Android Studio **Hedgehog 2023.1.1** o superior
 - JDK 17+ (incluido en Android Studio)
@@ -14,7 +14,7 @@ Aplicación móvil desarrollada en **Kotlin con Jetpack Compose** que consume el
 
 ---
 
-## ⚙️ Configuración de la URL base del backend
+##  Configuración de la URL base del backend
 
 La URL se configura en `local.properties` (en la raíz del proyecto):
 
@@ -27,7 +27,7 @@ API_BASE_URL=http://10.0.2.2:8000/api/
 
 ---
 
-## 🔐 Usuario y contraseña de prueba
+##  Usuario y contraseña de prueba
 
 Crea un superusuario en el backend:
 
@@ -36,11 +36,6 @@ cd D:\FunerariaApi
 .venv\Scripts\python.exe manage.py createsuperuser
 ```
 
-| Campo | Valor de ejemplo |
-|-------|-----------------|
-| Username | `admin` |
-| Password | `admin123` |
-| is_staff | `True` (automático en superusuario) |
 
 Para un usuario normal (sin permisos de escritura):
 ```bash
@@ -49,7 +44,7 @@ python manage.py shell -c "from django.contrib.auth.models import User; User.obj
 
 ---
 
-## 🚀 Instrucciones para ejecutar la app
+##  Instrucciones para ejecutar la app
 
 ### 1. Levantar el backend
 ```bash
@@ -71,51 +66,51 @@ Android Studio sincronizará automáticamente. Espera a que termine (barra infer
 
 ---
 
-## 📦 Entidades implementadas (8)
+##  Entidades
 
-### 1. 👨‍👩‍👧 Clientes (`/api/clientes/`)
+### 1. Clientes (`/api/clientes/`)
 Familiares o responsables del contrato funerario.
 - **Campos**: Nombre completo, DNI/Cédula, Teléfono, Email, Dirección
 - **Búsqueda**: nombre, DNI, email
 - **Pantallas**: Lista, Detalle, Formulario
 
-### 2. 🕊 Difuntos (`/api/difuntos/`)
+### 2. Difuntos (`/api/difuntos/`)
 Registro de personas fallecidas.
 - **Campos**: Nombre, Cliente responsable, Fecha nacimiento, Fecha defunción, Causa, Lugar de velación
 - **Búsqueda**: nombre, causa de fallecimiento
 - **Pantallas**: Lista, Detalle, Formulario
 
-### 3. 📦 Productos (`/api/productos/`)
+### 3.Productos (`/api/productos/`)
 Inventario de ataúdes, urnas, flores y accesorios.
 - **Campos**: Nombre, Categoría, Precio, Stock, Proveedor
 - **Búsqueda**: nombre, categoría
 - **Pantallas**: Lista, Detalle, Formulario
 
-### 4. 🔧 Servicios (`/api/servicios/`)
+### 4.Servicios (`/api/servicios/`)
 Servicios funerarios como cremación, velación, etc.
 - **Campos**: Nombre, Descripción, Precio base
 - **Búsqueda**: nombre, descripción
 - **Pantallas**: Lista, Detalle, Formulario
 
-### 5. 📋 Contratos (`/api/contratos/`)
+### 5. Contratos (`/api/contratos/`)
 Facturación y planes contratados por los clientes.
 - **Campos**: Cliente, Difunto, Total, Estado de pago (Pendiente/Pagado/Cancelado)
 - **Búsqueda**: estado de pago
 - **Pantallas**: Lista, Detalle, Formulario
 
-### 6. 👔 Empleados (`/api/empleados/`)
+### 6. Empleados (`/api/empleados/`)
 Personal de la funeraria (solo Admin puede gestionar).
 - **Campos**: Usuario, Cargo, Turno (Mañana/Tarde/Noche)
 - **Búsqueda**: cargo, turno
 - **Pantallas**: Lista, Detalle, Formulario
 
-### 7. 🚚 Proveedores (`/api/proveedores/`)
+### 7. Proveedores (`/api/proveedores/`)
 Empresas proveedoras de ataúdes, flores, etc.
 - **Campos**: Empresa, RUC/NIT, Tipo producto, Contacto, Teléfono, Email, Dirección
 - **Búsqueda**: nombre empresa, RUC, contacto
 - **Pantallas**: Lista, Detalle, Formulario
 
-### 8. 💰 Pagos (`/api/pagos/`)
+### 8. Pagos (`/api/pagos/`)
 Registro de pagos asociados a contratos.
 - **Campos**: Contrato, Monto, Método de pago, Referencia, Observaciones
 - **Búsqueda**: referencia, método de pago
@@ -123,7 +118,7 @@ Registro de pagos asociados a contratos.
 
 ---
 
-## 🗺️ Listado de pantallas
+## Listado de pantallas
 
 | Pantalla | Ruta | Descripción |
 |----------|------|-------------|
@@ -141,11 +136,10 @@ Registro de pagos asociados a contratos.
 | Proveedores - Lista/Detalle/Form | `proveedores/...` | CRUD completo |
 | Pagos - Lista/Detalle/Form | `pagos/...` | CRUD completo |
 
-**Total: 27 rutas / pantallas**
 
 ---
 
-## 🔑 Ejemplos de consumo de la API con token
+## Ejemplos de consumo de la API con token
 
 ### Obtener token JWT
 ```bash
@@ -194,7 +188,7 @@ curl -X DELETE http://localhost:8000/api/clientes/1/ \
 
 ---
 
-## 🏗️ Arquitectura del proyecto
+##  Arquitectura del proyecto
 
 ```
 MVVM + Clean Architecture (simplificada)
@@ -226,7 +220,7 @@ com.funeraria.app/
 
 ---
 
-## 📋 Tecnologías utilizadas
+## ecnologías utilizadas
 
 | Tecnología | Versión | Uso |
 |------------|---------|-----|
@@ -241,26 +235,3 @@ com.funeraria.app/
 | Material3 | - | Diseño de la UI |
 
 ---
-
-## 📱 Compilar el APK
-
-### Desde Android Studio
-```
-Build → Build Bundle(s) / APK(s) → Build APK(s)
-```
-El APK se genera en: `app/build/outputs/apk/debug/app-debug.apk`
-
-### Desde línea de comandos
-```bash
-cd D:\proyectito
-.\gradlew.bat assembleDebug
-```
-
----
-
-## ⚠️ Notas importantes
-
-- La app usa `android:usesCleartextTraffic="true"` para permitir HTTP local durante desarrollo
-- En producción, configurar HTTPS y cambiar la URL base
-- El token JWT se almacena en DataStore (más seguro que SharedPreferences)
-- Los permisos de admin/usuario se leen del campo `is_staff` en el JWT
