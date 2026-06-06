@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.funeraria.app-mergeDebugResources-60:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\thele\\.gradle\\caches\\8.10.2\\transforms\\4a7bc58d7f9375f4b31b075ca3b53685\\transformed\\jetified-material3-release\\res\\values-v30\\values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        }
+    ]
+}
